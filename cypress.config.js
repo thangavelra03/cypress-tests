@@ -12,7 +12,7 @@ reporterOptions: {
   charts: true,
   embeddedScreenshots: true,
   inlineAssets: true
-}
+},
 
 
   e2e: {
