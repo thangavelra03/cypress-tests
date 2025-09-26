@@ -11,41 +11,32 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout the repo
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      # Step 2: Setup Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 18
 
-      # Step 3: Install dependencies
       - name: Install dependencies
         run: npm ci
 
-      # Step 4: Ensure results folder exists
-      - name: Create results folder
+      - name: Create reports folder
         run: mkdir -p cypress/reports
 
-      # Step 5: Run Cypress tests headless
       - name: Run Cypress tests
-        run: npx cypress run --headless --browser chrome
+        run: npx cypress run --headless --browser chrome --reporter cypress-mochawesome-reporter --reporter-options reportDir=cypress/reports,json=true,html=false,overwrite=false
 
-      # Step 6: List results folder (debug)
-      - name: List results folder
-        run: ls -la cypress/reports
+      - name: List JSON files
+        run: ls -la cypress/reports/*.json || echo "No JSON files found"
 
-      # Step 7: Merge Mochawesome JSON files
-      - name: Merge mochawesome JSONs
+      - name: Merge Mochawesome JSONs
         run: npm run report:merge
 
-      # Step 8: Generate HTML report
       - name: Generate HTML report
         run: npm run report:generate
 
-      # Step 9: Upload report artifact
       - name: Upload Cypress report
         uses: actions/upload-artifact@v4
         with:

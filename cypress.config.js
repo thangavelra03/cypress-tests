@@ -20,6 +20,7 @@ reporterOptions: {
     defaultCommandTimeout: 10000,
     retries: { runMode: 1, openMode: 0 },
     supportFile: 'cypress/support/e2e.js',
+    
 
     setupNodeEvents(on, config) {
       // attach reporter plugin
