@@ -3,14 +3,17 @@ const fs = require('fs');
 const path = require('path');
 
 module.exports = defineConfig({
-  reporter: "cypress-mochawesome-reporter",
-  reporterOptions: {
-    charts: true,
-    reportPageTitle: "Cypress Test Report",
-    embeddedScreenshots: true,
-    inlineAssets: true,
-    reportDir: 'cypress/reports',
-  },
+  reporter: 'cypress-mochawesome-reporter',
+reporterOptions: {
+  reportDir: 'cypress/results',
+  overwrite: false,
+  html: false,
+  json: true,
+  charts: true,
+  embeddedScreenshots: true,
+  inlineAssets: true
+}
+
 
   e2e: {
     baseUrl: 'https://demoblaze.com',

@@ -29,11 +29,11 @@ jobs:
       - name: Create results folder
         run: mkdir -p cypress/results
 
-      # Step 5: Run Cypress tests
+      # Step 5: Run Cypress tests headless
       - name: Run Cypress tests
-        run: npm run cypress:run
+        run: npx cypress run --headless --browser chrome
 
-      # Step 6: Debug (optional) - list files to check JSONs
+      # Step 6: Debug - list results folder to check JSON files
       - name: List results folder
         run: ls -la cypress/results
 
@@ -45,7 +45,7 @@ jobs:
       - name: Generate HTML report
         run: npm run report:generate
 
-      # Step 9: Upload report as artifact
+      # Step 9: Upload report artifact
       - name: Upload report artifact
         uses: actions/upload-artifact@v4
         with:
