@@ -27,7 +27,7 @@ jobs:
 
       # Step 4: Ensure results folder exists
       - name: Create results folder
-        run: mkdir -p cypress/results
+        run: mkdir -p cypress/reports
 
       # Step 5: Run Cypress tests headless
       - name: Run Cypress tests
@@ -35,7 +35,7 @@ jobs:
 
       # Step 6: List results folder (debug)
       - name: List results folder
-        run: ls -la cypress/results
+        run: ls -la cypress/reports
 
       # Step 7: Merge Mochawesome JSON files
       - name: Merge mochawesome JSONs
