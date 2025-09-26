@@ -8,12 +8,13 @@ reporter: 'cypress-mochawesome-reporter',
 reporterOptions: {
   reportDir: 'cypress/reports',
   overwrite: false,
-  html: false,
+  html: true,   // optional, can be true
   json: true,
   charts: true,
   embeddedScreenshots: true,
   inlineAssets: true
 },
+
 
 
   e2e: {
