@@ -1,0 +1,32 @@
+{
+  "name": "cypress-learning",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+"scripts": {
+  "cypress:open": "cypress open",
+  "clean-reports": "rimraf cypress/reports/*.json",
+  "cypress:run": "npm run clean-reports && cypress run",
+  "report:merge": "mochawesome-merge cypress/results/*.json > mochawesome.json",
+  "report:generate": "marge mochawesome.json -f report -o cypress/reports --charts",
+  "report:full": "npm run cypress:run && npm run report:merge && npm run report:generate && npx open-cli cypress/reports/report.html"
+},
+
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@4tw/cypress-drag-drop": "^2.3.0",
+    "@faker-js/faker": "^10.0.0",
+    "cypress": "^13.13.1",
+    "cypress-downloadfile": "^1.2.4",
+    "cypress-file-upload": "^5.0.8",
+    "cypress-iframe": "^1.0.1",
+    "cypress-mochawesome-reporter": "^4.0.2",
+    "cypress-real-events": "^1.15.0",
+    "mochawesome": "^7.1.4",
+    "mochawesome-merge": "^5.0.0",
+    "mochawesome-report-generator": "^6.3.0",
+    "rimraf": "^6.0.1"
+  }
+}
