@@ -26,7 +26,10 @@ jobs:
         run: mkdir -p cypress/reports
 
       - name: Run Cypress tests
-        run: npx cypress run --headless --browser chrome --reporter cypress-mochawesome-reporter --reporter-options reportDir=cypress/reports,json=true,html=false,overwrite=false
+        run: |
+          npx cypress run --headless --browser chrome \
+          --reporter cypress-mochawesome-reporter \
+          --reporter-options reportDir=cypress/reports,json=true,html=false,overwrite=false
 
       - name: List JSON files
         run: ls -la cypress/reports/*.json || echo "No JSON files found"

@@ -1,9 +1,10 @@
 const { defineConfig } = require('cypress');
 const fs = require('fs');
 const path = require('path');
+const mochawesome = require('cypress-mochawesome-reporter/plugin');
 
 module.exports = defineConfig({
-  reporter: 'cypress-mochawesome-reporter',
+reporter: 'cypress-mochawesome-reporter',
 reporterOptions: {
   reportDir: 'cypress/reports',
   overwrite: false,
@@ -22,10 +23,9 @@ reporterOptions: {
     supportFile: 'cypress/support/e2e.js',
     
 
-    setupNodeEvents(on, config) {
-      // attach reporter plugin
-      require('cypress-mochawesome-reporter/plugin')(on);
-
+   setupNodeEvents(on, config) {
+      mochawesome(on); // ✅ attach properly
+      
       // custom tasks (only keep if you use them)
       on('task', {
         clearDownloads() {
