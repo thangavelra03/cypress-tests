@@ -1,0 +1,108 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-09-26T20:01:52.530Z",
+    "end": "2025-09-26T20:03:03.299Z",
+    "duration": 70769,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "51450cff-54b3-49e8-9ba7-71a2d785ac80",
+      "title": "",
+      "fullFile": "cypress/e2e/LoginTest.cy.js",
+      "file": "cypress/e2e/LoginTest.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "a690b129-d333-4318-8b99-2d27e768a99d",
+          "title": "Login Test",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC1 - valid login",
+              "fullTitle": "Login Test TC1 - valid login",
+              "timedOut": null,
+              "duration": 19941,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"/LoginTest.cy.js/Login Test -- TC1 - valid login (failed).png\"\n    ],\n    []\n  ]\n}",
+              "code": "cy.LoginDemoblaze();\ncy.LogoutDemoblaze();",
+              "err": {},
+              "uuid": "77e47218-3e76-46c3-88f9-81e25789e3f5",
+              "parentUUID": "a690b129-d333-4318-8b99-2d27e768a99d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "77e47218-3e76-46c3-88f9-81e25789e3f5"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 19941,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/.jsons",
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "charts": true,
+        "embeddedScreenshots": true,
+        "inlineAssets": true
+      },
+      "version": "6.3.0"
+    }
+  }
+}

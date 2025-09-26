@@ -11,29 +11,30 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # Step 1: Checkout repository
       - name: Checkout repo
         uses: actions/checkout@v4
 
+      # Step 2: Setup Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 18
 
+      # Step 3: Install dependencies
       - name: Install dependencies
         run: npm ci
 
+      # Step 4: Ensure reports folder exists
       - name: Create reports folder
         run: mkdir -p cypress/reports
 
+      # Step 5: Run Cypress tests headless (HTML & JSON report generated automatically)
       - name: Run Cypress tests
-        run: npm run cypress:run
+        run: npx cypress run --headless --browser chrome
 
-      - name: List JSON files
-        run: ls -la cypress/reports/*.json || echo "No JSON files found"
-
-      - name: Generate HTML report
-        run: npm run report:generate
-
+     
+      # Step 6: Upload Cypress reports as artifact
       - name: Upload Cypress report
         uses: actions/upload-artifact@v4
         with:

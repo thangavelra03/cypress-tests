@@ -1,0 +1,146 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-09-26T20:03:07.833Z",
+    "end": "2025-09-26T20:03:34.567Z",
+    "duration": 26734,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "56025b6c-ceef-41fc-9570-05da50aaad9d",
+      "title": "",
+      "fullFile": "cypress/e2e/SignupTest.cy.js",
+      "file": "cypress/e2e/SignupTest.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "f7e4cd7c-4920-4f6c-b2e6-45e2c74974a5",
+          "title": "Sign up Test",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC1 - Sign up with existing user",
+              "fullTitle": "Sign up Test TC1 - Sign up with existing user",
+              "timedOut": null,
+              "duration": 5877,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('existingUser').then(user => {\n  cy.get('#signin2').click();\n  cy.get('#signInModal').should('be.visible');\n  cy.get('#sign-username').should('be.visible').click().type(user.username, {\n    force: true,\n    delay: 200\n  }).should('have.value', user.username);\n  cy.get('#sign-password').should('be.visible').click().type(user.password, {\n    force: true,\n    delay: 200\n  }).should('have.value', user.password);\n  cy.get('button[onclick=\"register()\"]').click();\n});\ncy.on('window:alert', alertText => {\n  expect(alertText).to.contain('This user already exist.');\n});",
+              "err": {},
+              "uuid": "08cba586-322b-4166-a7fc-023777f1504c",
+              "parentUUID": "f7e4cd7c-4920-4f6c-b2e6-45e2c74974a5",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC2 - Sign up with new user (faker)",
+              "fullTitle": "Sign up Test TC2 - Sign up with new user (faker)",
+              "timedOut": null,
+              "duration": 6475,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"/SignupTest.cy.js/Sign up Test -- TC2 - Sign up with new user (faker) (failed).png\"\n    ],\n    []\n  ]\n}",
+              "code": "const randomUser = {\n  username: _faker.faker.internet.username(),\n  password: _faker.faker.internet.password()\n};\ncy.get('#signin2').click();\ncy.get('#signInModal').should('be.visible');\ncy.get('#sign-username').should('be.visible').clear().type(randomUser.username, {\n  delay: 100\n}).should('have.value', randomUser.username);\ncy.get('#sign-password').should('be.visible').clear().type(randomUser.password, {\n  delay: 100\n}).should('have.value', randomUser.password);\ncy.get('button[onclick=\"register()\"]').click();\ncy.on('window:alert', alertText => {\n  expect(alertText).to.contain('Sign up successful.');\n});",
+              "err": {},
+              "uuid": "1666af23-1dac-4be3-baea-970d970d036b",
+              "parentUUID": "f7e4cd7c-4920-4f6c-b2e6-45e2c74974a5",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC3 - empty username and password",
+              "fullTitle": "Sign up Test TC3 - empty username and password",
+              "timedOut": null,
+              "duration": 1407,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#signin2').click();\ncy.get('#signInModal').should('be.visible');\ncy.get('#sign-username').should('be.visible').clear().type(' ', {\n  delay: 100\n}).should('have.value', ' ');\ncy.get('#sign-password').should('be.visible').clear().type(' ', {\n  delay: 100\n}).should('have.value', ' ');\ncy.get('button[onclick=\"register()\"]').click();\ncy.on('window:alert', alertText => {\n  expect(alertText).to.contain('Please fill out Username and Password.');\n});",
+              "err": {},
+              "uuid": "43cfdf19-d97b-44ee-b635-f740183df546",
+              "parentUUID": "f7e4cd7c-4920-4f6c-b2e6-45e2c74974a5",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "08cba586-322b-4166-a7fc-023777f1504c",
+            "1666af23-1dac-4be3-baea-970d970d036b",
+            "43cfdf19-d97b-44ee-b635-f740183df546"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 13759,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/.jsons",
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "charts": true,
+        "embeddedScreenshots": true,
+        "inlineAssets": true
+      },
+      "version": "6.3.0"
+    }
+  }
+}
