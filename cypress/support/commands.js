@@ -43,14 +43,10 @@ Cypress.Commands.add('dragTo', (source, target) => {
     .trigger('mouseup', { force: true });
 });
 
-
-
-
-
-
-
-
-
+Cypress.Commands.add("getOtpCode", (email) => {
+  cy.log(`Fetching OTP for ${email}`);
+  return cy.task("getOtpFromMailosaur", email);
+});
 
 
 

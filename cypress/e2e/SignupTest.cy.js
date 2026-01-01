@@ -1,6 +1,9 @@
 import { faker } from "@faker-js/faker";
 
 describe ('Sign up Test', ()=>{
+    const now = new Date();
+    const timestamp = now.toISOString().replace(/[:.]/g, '-');
+
 
     beforeEach(()=>{
         cy.visit('/');
@@ -10,6 +13,7 @@ describe ('Sign up Test', ()=>{
         cy.fixture('existingUser').then(user => {
         cy.get('#signin2').click();
         cy.get('#signInModal').should('be.visible');
+        cy.screenshot(`SignIn_Popup_${timestamp}`);
 
 
         cy.get('#sign-username')
@@ -30,7 +34,7 @@ describe ('Sign up Test', ()=>{
         })
 
         cy.on('window:alert', (alertText) => {
-  expect(alertText).to.contain('This user already exist.');
+  expect(alertText).to.contain('This user already exist.')
 });
 
 

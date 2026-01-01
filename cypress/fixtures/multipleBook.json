@@ -1,0 +1,17 @@
+[
+    {
+        "book_name": "RestAssured with Java",
+        "isbn": "LSA",
+        "aisle": "2303"
+    },
+    {
+        "book_name": "RestAssured with Python",
+        "isbn": "LSB",
+        "aisle": "2304"
+    },
+    {
+        "book_name": "RestAssured with Javascript",
+        "isbn": "LSC",
+        "aisle": "2304"
+    }
+]

@@ -22,5 +22,4 @@ describe('API Testing: GET and POST Requests', () => {
       expect(response.body.title).to.eq('My New Post')    // Validate title
     })
   })
-
 })
